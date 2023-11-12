@@ -1,0 +1,61 @@
+﻿@model IEnumerable<Parcial3_MazoQuicenoFredyAntonio.DAL.Entities.Ticket>
+
+@{
+    ViewData["Title"] = "Index";
+}
+("UseDate,IsUsed,EntranceGate")
+<h1>Boleta</h1>
+
+<p>
+    <a asp-action="Create">Ingresar nueva persona</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UseDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsUsed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EntranceGate)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ModifiedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UseDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsUsed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EntranceGate)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ModifiedDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
