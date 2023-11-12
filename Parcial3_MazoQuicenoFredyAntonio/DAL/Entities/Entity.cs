@@ -8,9 +8,9 @@ namespace Parcial3_MazoQuicenoFredyAntonio.DAL.Entities
         public Guid Id { get; set; }
 
         [Display(Name = "Fecha de Creación")]
-        public DateTime? CreateDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
 
         [Display(Name = "Fecha de Modificación")]
-        public DateTime? ModifieDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
     }
 }
